@@ -72,7 +72,8 @@
   align-self: stretch;
   position: relative;
 }
-.contenido-del-sitio-2023-dere3 {
+.contenido-del-sitio-2023-dere3,
+.historial {
   width: 664px;
   display: flex;
   flex-direction: column;
@@ -86,11 +87,8 @@
   width: 100%;
   height: 1080px;
   overflow: hidden;
-  display: none;
-  flex-direction: column;
   padding: 23px var(--padding-77xl);
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
   gap: 70px;
   text-align: center;

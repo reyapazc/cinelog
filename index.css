@@ -107,7 +107,7 @@
   background-color: var(--color-midnightblue);
   width: 100%;
   overflow: hidden;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-31xl) var(--padding-609xl) 22px;
   box-sizing: border-box;
