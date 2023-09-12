@@ -8,6 +8,7 @@
   overflow: hidden;
   height: 75px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 .nombre-de-usuario {
   margin: 0;
