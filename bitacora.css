@@ -86,27 +86,30 @@ body {
   width: 100%;
   border-collapse: collapse;
   border-radius: 5px;
+  border: 1px solid #000; /* Agrega un borde a la tabla */
 }
 
 #bitacoraTable th,
 #bitacoraTable td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #000; /* Agrega un borde a las celdas */
 }
 
 #bitacoraTable th {
-  color: #000000;
+  color: #000;
 }
 
 #bitacoraTable tr:nth-child(even) {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .edit-btn,
 .delete-btn {
   padding: 5px 10px;
-  background-color: #000000;
-  color: #000000;
+  background-color: #000;
+  color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -114,5 +117,6 @@ body {
 
 .edit-btn:hover,
 .delete-btn:hover {
-  background-color: #000000;
+  background-color: #000;
 }
+

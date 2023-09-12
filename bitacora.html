@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./bitacora.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-    />
-  </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+</head>
+<body style="background-color: #002069">
 
-  <body style="background-color: #002069">
-
-
-
-    <script>
-      // Función para agregar una nueva fila a la tabla
-      function agregarFila() {
+<script>
+    // Función para agregar una nueva fila a la tabla
+    function agregarFila() {
         // Obtener los valores de los campos de entrada
         const numeroSala = document.querySelector('input[name="numero_sala"]').value;
         const horaFuncion = document.querySelector('input[name="hora_funcion"]').value;
@@ -27,13 +20,13 @@
         const cortesiasGeneradas = document.querySelector('input[name="cortesias_generadas"]').value;
         const responsableConteo = document.querySelector('input[name="responsable_conteo"]').value;
         const responsableSala = document.querySelector('input[name="responsable_sala"]').value;
-    
+
         // Obtener la tabla
         const tabla = document.getElementById('bitacoraTable').getElementsByTagName('tbody')[0];
-    
+
         // Crear una nueva fila
         const fila = tabla.insertRow();
-    
+
         // Insertar celdas en la fila
         const celda1 = fila.insertCell(0);
         const celda2 = fila.insertCell(1);
@@ -42,7 +35,7 @@
         const celda5 = fila.insertCell(4);
         const celda6 = fila.insertCell(5);
         const celda7 = fila.insertCell(6);
-    
+
         // Agregar valores a las celdas
         celda1.innerHTML = numeroSala;
         celda2.innerHTML = horaFuncion;
@@ -51,7 +44,7 @@
         celda5.innerHTML = cortesiasGeneradas;
         celda6.innerHTML = responsableConteo;
         celda7.innerHTML = responsableSala;
-    
+
         // Limpiar los campos de entrada
         document.querySelector('input[name="numero_sala"]').value = '';
         document.querySelector('input[name="hora_funcion"]').value = '';
@@ -60,89 +53,85 @@
         document.querySelector('input[name="cortesias_generadas"]').value = '';
         document.querySelector('input[name="responsable_conteo"]').value = '';
         document.querySelector('input[name="responsable_sala"]').value = '';
-      }
-    </script>        
+    }
+</script>
 
+<header>
+    <img class="header-image" alt="" src="./public/frame1.png" />
+</header>
 
-    <header>
-      <img class="header-image" alt="" src="./public/frame1.png" />
-    </header>
-
-    <div class="bitacora">
-        <!-- Parte de arriba con 7 textos, 7 inputs y un botón -->
-        <div id="bitacoraForm">
-
-          <div class="form-row-container">
-          <div class="form-row">
-              <label>Número de sala:</label>
-              <input type="text" name="fecha">
-          </div>
-          <div class="form-row">
-              <label>Hora de la función:</label>
-              <input type="text" name="actividad">
-          </div>
-          </div>
-
-          <div class="form-row-container">
-          <div class="form-row">
-              <label>Número de clientes en sala:</label>
-              <input type="text" name="lugar">
-          </div>
-          <div class="form-row">
-              <label>Boletos vendidos en sistema:</label>
-              <input type="text" name="observaciones">
-          </div>
-          </div>
-
-          <div class="form-row-container">
-          <div class="form-row">
-              <label>Cortesías generadas en sistema:</label>
-              <input type="text" name="responsable">
-          </div>
-          <div class="form-row">
-              <label>Responsable de conteo:</label>
-              <input type="text" name="acciones_realizadas">
-          </div>
-          </div>
-
-
-          <div class="form-row-container">
-          <div class="form-row">
-            <label>Responsable de sala:</label>
-            <input type="text" name="acciones_realizadas">
-          </div>
-          <div class="button-container">
-          <button type="button" onclick="agregarFila()">Guardar</button>
-          </div>
-          </div>
+<div class="bitacora">
+    <!-- Parte de arriba con 7 textos, 7 inputs y un botón -->
+    <div id="bitacoraForm">
+        <div class="form-row-container">
+            <div class="form-row">
+                <label>Número de sala:</label>
+                <input type="text" name="numero_sala">
+            </div>
+            <div class="form-row">
+                <label>Hora de la función:</label>
+                <input type="text" name="hora_funcion">
+            </div>
         </div>
 
+        <div class="form-row-container">
+            <div class="form-row">
+                <label>Número de clientes en sala:</label>
+                <input type="text" name="num_clientes">
+            </div>
+            <div class="form-row">
+                <label>Boletos vendidos en sistema:</label>
+                <input type="text" name="boletos_vendidos">
+            </div>
+        </div>
 
-        <!-- Parte de abajo con la tabla scrollable -->
-        <table id="bitacoraTable">
-          <thead>
-            <tr>
-              <th>Número de sala:</th>
-              <th>Hora de la función:</th>
-              <th>Número de clientes en sala:</th>
-              <th>Boletos vendidos en sistema:</th>
-              <th>Cortesías generadas en sistema:</th>
-              <th>Responsable de conteo:</th>
-              <th>Responsable de sala:</th>
-            </tr>
-          </thead>
+        <div class="form-row-container">
+            <div class="form-row">
+                <label>Cortesías generadas en sistema:</label>
+                <input type="text" name="cortesias_generadas">
+            </div>
+            <div class="form-row">
+                <label>Responsable de conteo:</label>
+                <input type="text" name="responsable_conteo">
+            </div>
+        </div>
 
-          <tbody>
-              <!-- Aquí se generarán dinámicamente las filas de la tabla -->
-          </tbody>
-        </table>
-
+        <div class="form-row-container">
+            <div class="form-row">
+                <label>Responsable de sala:</label>
+                <input type="text" name="responsable_sala">
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="agregarFila()">Guardar</button>
+            </div>
+        </div>
     </div>
 
-    <footer>
-      <p>
+    <!-- Parte de abajo con la tabla scrollable -->
+    <table id="bitacoraTable">
+        <thead>
+        <tr>
+            <th>Número de sala:</th>
+            <th>Hora de la función:</th>
+            <th>Número de clientes en sala:</th>
+            <th>Boletos vendidos en sistema:</th>
+            <th>Cortesías generadas en sistema:</th>
+            <th>Responsable de conteo:</th>
+            <th>Responsable de sala:</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- Aquí se generarán dinámicamente las filas de la tabla -->
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>
         Contenido del sitio 2023© Derechos reservados Exhibidora Mexicana Cinépolis®, S.A. de C.V.
-      </p>
-    </footer>
-  </body>
+    </p>
+</footer>
+</body>
 </html>
+
