@@ -1,86 +1,92 @@
-.frame-icon1 {
-  align-self: stretch;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  height: 75px;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-.generar-bitcora {
-  position: relative;
-  font-size: var(--font-size-6xl);
-  font-family: var(--font-inter);
-  color: var(--color-black);
-  text-align: center;
-}
-.generar-bitcora-wrapper,
-.historial-de-bitcoras-wrapper {
-  cursor: pointer;
-  border: 1px solid var(--color-black);
-  padding: var(--padding-4xs) var(--padding-sm);
-  background-color: var(--color-goldenrod);
-  align-self: stretch;
-  border-radius: 18.75px;
-  box-sizing: border-box;
-  height: 100px;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.historial-de-bitcoras-wrapper {
-  padding: 32px var(--padding-31xl);
-}
-.frame-group,
-.frame2 {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.frame-group {
-  width: 100%;
-  border-radius: 18.75px;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-black);
-  box-sizing: border-box;
-  padding: 62px 111px;
-  gap: 77px;
-  max-width: 664px;
-}
-.frame2 {
-  align-self: stretch;
-  gap: var(--gap-146xl);
-}
-.contenido-del-sitio1 {
-  align-self: stretch;
-  position: relative;
-}
-.contenido-del-sitio-2023-dere1,
-.menu {
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+
+body {
+  background: linear-gradient(90deg, rgb(0, 29, 109) 50%, rgb(0, 29, 109) 50%);
+  font-family: "Arial Narrow";    
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 80vh; /* Cambio a min-height para asegurarse de que el contenido se ajuste */
+  margin: -50px 0 0; /* Ajusta el valor de margin-top según tu preferencia */
+  padding: 0; /* Eliminamos el margen negativo */
+  overflow-y: auto; /* Evita desplazamiento horizontal */
 }
-.contenido-del-sitio-2023-dere1 {
-  align-self: stretch;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-.menu {
+
+.form {
   position: relative;
-  background-color: var(--color-midnightblue);
-  width: 100%;
-  height: 1080px;
-  overflow: hidden;
-  padding: var(--padding-31xl) var(--padding-609xl) var(--padding-2xl);
-  box-sizing: border-box;
-  gap: var(--gap-146xl);
+  background: #FFFFFF;
+  max-width: 360px;
+  padding: 45px;
   text-align: center;
-  font-size: var(--font-size-mini);
-  color: var(--color-white);
-  font-family: var(--font-inter);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 15px;
+  margin: -100px auto 10px ; /* Centramos horizontalmente */
+}
+
+.form input {
+  outline: 0;
+  background: #FFFFFF;
+  width: 100%;
+  border: 1px solid #000000;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #FBCF4C;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #000000;
+  font-size: 14px;
+  border-radius: 15px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #2957d6;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #3324be;
+  text-decoration: none;
+}
+
+.contenido-del-sitio {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.contenido-del-sitio-2023-dere {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: flex-end;
+  font-size: 14px; /* Reemplaza con un valor concreto */
+  color: #FFFFFF; /* Reemplaza con un valor concreto */
+  margin-top: 50px;
 }
