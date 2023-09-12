@@ -1,92 +1,62 @@
-.frame-icon3 {
-  width: 664px;
-  height: 75px;
-  overflow: hidden;
-  object-fit: cover;
+/* Estilo para el header */
+header {
+  text-align: center; /* Centra el contenido horizontalmente */
+  padding: 20px 0; /* Espaciado interior del header */
 }
-.frame-child73,
-.frame-icon3,
-.texto {
-  position: relative;
-  flex-shrink: 0;
+
+/* Estilo para la imagen del header */
+.header-image {
+  max-width: 100%; /* Asegura que la imagen se ajuste al ancho del header */
+  height: auto; /* Permite que la altura de la imagen se ajuste proporcionalmente al ancho */
 }
-.texto {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1500px;
-  height: 67px;
+
+/* Estilo para el footer */
+footer {
+  text-align: center; /* Centra el texto horizontalmente en el footer */
+  padding: 10px; /* Espaciado interior del footer */
 }
-.frame-child73 {
-  border-radius: var(--br-smi-5);
-  width: 80px;
-  height: 50px;
-  overflow: hidden;
-  object-fit: cover;
+
+/* Estilo para el texto del footer */
+footer p {
+  margin: 0; /* Elimina el margen predeterminado del párrafo */
+  font-size: 14px; /* Tamaño de fuente (ajusta según tus preferencias) */
+  color: #ffffff; /* Color del texto (blanco) */
 }
-.frame-parent8,
-.frame10,
-.texto-parent {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-.texto-parent {
-  border-radius: var(--br-smi-5);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-black);
-  box-sizing: border-box;
-  width: 1700px;
-  flex-direction: row;
-  padding: 0 var(--padding-3xs);
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.frame-parent8,
-.frame10 {
+
+/* Estilo para el contenedor de la bitácora */
+.bitacora {
   width: 1728px;
-  flex-shrink: 0;
-  flex-direction: column;
+  height: 750px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+
+  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
 }
-.frame-parent8 {
-  border-radius: 18.75px;
-  background-color: var(--color-white);
-  height: 850px;
-  padding: 37px var(--padding-6xl);
-  box-sizing: border-box;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.frame10 {
-  height: 950px;
-  justify-content: center;
-  gap: var(--gap-6xl);
-}
-.contenido-del-sitio3 {
-  align-self: stretch;
-  position: relative;
-}
-.contenido-del-sitio-2023-dere3,
-.historial {
-  width: 664px;
+
+/* Estilo para los registros */
+.registro {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  color: var(--color-white);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
-.historial {
-  position: relative;
-  background-color: var(--color-midnightblue);
-  width: 100%;
-  height: 1080px;
-  overflow: hidden;
-  padding: 23px var(--padding-77xl);
-  box-sizing: border-box;
-  justify-content: flex-start;
-  gap: 70px;
-  text-align: center;
-  font-size: var(--font-size-mini);
-  color: var(--color-black);
-  font-family: var(--font-inter);
+
+/* Estilo para los botones de ver y eliminar */
+.acciones button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.ver {
+  background-color: #e4dccf;
+}
+.eliminar {
+  background-color: #ea5455;
 }
