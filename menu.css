@@ -44,12 +44,31 @@ body {
   border-radius: 15px;
 }
 
+.button {
+  display: block;
+  padding: 15px 30px;
+  background-color: #FBCF4C;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px; /* Espacio entre los botones */
+}
+
+.button:hover {
+  background-color: #2957d6;
+}
+
 .form button {
   outline: 0;
   background: #FBCF4C;
   width: 100%;
   border: 0;
-  padding: 15px;
+  padding: 15px 125px;
   color: #000000;
   font-size: 14px;
   border-radius: 15px;
