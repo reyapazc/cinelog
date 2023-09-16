@@ -1,76 +1,76 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:300);
-
 body {
-  background: linear-gradient(90deg, rgb(0, 29, 109) 50%, rgb(0, 29, 109) 50%);
-  font-family: "Arial Narrow";
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  background: linear-gradient(90deg, rgb(0, 29, 109) 50%, rgb(0, 29, 109) 50%);
+  font-family: "Arial Narrow";
 }
-.form {
-  position: relative;
+
+.login-box {
   background: #FFFFFF;
-  max-width: 360px;
+  width: 360px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  border-radius:15px;
-  margin: -100px auto 0;
+  border-radius: 15px;
+  height: 210px;
+  position: relative;
 }
-.form input {
-  outline: 0;
-  background: #FFFFFF;
+
+.login-box input {
   width: 100%;
   border: 1px solid #000000;
-  margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  border-radius:15px;
+  border-radius: 15px;
+  margin-bottom: 30px; /* Espacio entre los campos de entrada */
 }
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  transform: translateY(30px); /* Desplaza los campos hacia arriba */
+}
+
 .button {
-  outline: 0;
-  background: #FBCF4C;
-  width: 100%;
-  border: 0;
-  padding: 15px 125px;
+  position: absolute;
+  width: 325px;
+  padding: 15px;
   color: #000000;
   font-size: 14px;
-  border-radius:15px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
+  border-radius: 15px;
   text-decoration: none;
+  cursor: pointer;
+  background: #FBCF4C;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
-.button:hover,.form button:active,.form button:focus {
+
+.button:hover {
   background: #2957d6;
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #FFFFFF;
-  font-size: 12px;
-}
-.form .message a {
-  color: #3324be;
-  text-decoration: none;
-}
 
-
-footer {
+.contenido-del-sitio {
   text-align: center;
   color: #FFFFFF;
   font-size: var(--font-size-mini);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px; /* Ajusta la altura según tus necesidades */
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
+  margin-top: 50px;
+}
+/* Estilo para el header */
+header {
+  text-align: center;
+  padding: 10px 0;
 }
 
+/* Estilo para la imagen del header */
+.header-image {
+  display: block;
+  margin: 20px;
+  width: 650px; /* Cambia el ancho deseado */
+  height: auto; /* La altura se ajustará automáticamente según el ancho */
+}
