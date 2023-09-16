@@ -1,110 +1,113 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:300);
-
+/* Estilo para el body y el header */
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   background: linear-gradient(90deg, rgb(0, 29, 109) 50%, rgb(0, 29, 109) 50%);
-  font-family: "Arial Narrow";    
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh; /* Cambio a min-height para asegurarse de que el contenido se ajuste */
-  margin: -50px 0 0; /* Ajusta el valor de margin-top según tu preferencia */
-  padding: 0; /* Eliminamos el margen negativo */
-  overflow-y: auto; /* Evita desplazamiento horizontal */
+  font-family: "Arial Narrow";
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.form {
-  position: relative;
+/* Estilo para el cuadro de inicio de sesión */
+.login-box {
   background: #FFFFFF;
-  max-width: 360px;
+  width: 360px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 15px;
-  margin: -100px auto 10px ; /* Centramos horizontalmente */
+  height: 210px;
+  position: relative;
 }
 
-.form input {
-  outline: 0;
-  background: #FFFFFF;
+.login-box input {
   width: 100%;
   border: 1px solid #000000;
-  margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
   border-radius: 15px;
+  margin-bottom: 30px; /* Espacio entre los campos de entrada */
 }
 
 .button {
-  display: block;
-  padding: 15px 30px;
-  background-color: #FBCF4C;
+  position: absolute;
+  width: 325px;
+  padding: 20px;
   color: #000000;
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 15px;
-  border: none;
+  text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 10px; /* Espacio entre los botones */
+  background: #FBCF4C;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .button:hover {
-  background-color: #2957d6;
-}
-
-.form button {
-  outline: 0;
-  background: #FBCF4C;
-  width: 100%;
-  border: 0;
-  padding: 15px 125px;
-  color: #000000;
-  font-size: 14px;
-  border-radius: 15px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
   background: #2957d6;
-}
-
-.form .message {
-  margin: 15px 0 0;
-  color: #FFFFFF;
-  font-size: 12px;
-}
-
-.form .message a {
-  color: #3324be;
-  text-decoration: none;
 }
 
 .contenido-del-sitio {
   text-align: center;
   color: #FFFFFF;
+  font-size: var(--font-size-mini);
+  margin-top: 50px;
+}
+/* Estilo para el header */
+header {
+  text-align: center;
+  padding: 10px 0;
 }
 
-.contenido-del-sitio-2023-dere {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrar horizontalmente */
-  justify-content: flex-end;
-  font-size: 14px; /* Reemplaza con un valor concreto */
-  color: #FFFFFF; /* Reemplaza con un valor concreto */
-  margin-top: 50px;
+/* Estilo para la imagen del header */
+.header-image {
+  display: block;
+  margin: 20px;
+  width: 650px; /* Cambia el ancho deseado */
+  height: auto; /* La altura se ajustará automáticamente según el ancho */
+}
+/* Estilo para los botones */
+.button1 {
+  position: absolute;
+  width: 325px;
+  padding: 20px;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #FBCF4C;
+  bottom: 200px; /* Ajusta la posición vertical del segundo botón */
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.button1:hover {
+  background-color: #2957d6;
+}
+/* Estilo para los botones */
+.button2 {
+  position: absolute;
+  width: 325px;
+  padding: 20px;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #FBCF4C;
+  bottom: 125px; /* Ajusta la posición vertical del segundo botón */
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.button2:hover {
+  background-color: #2957d6;
 }
