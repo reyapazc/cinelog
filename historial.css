@@ -21,6 +21,7 @@ footer p {
   margin: 0; /* Elimina el margen predeterminado del párrafo */
   font-size: 14px; /* Tamaño de fuente (ajusta según tus preferencias) */
   color: #ffffff; /* Color del texto (blanco) */
+  font: Arial ;
 }
 
 /* Estilo para el contenedor de la bitácora */
