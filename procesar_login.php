@@ -29,11 +29,11 @@ if ($result->num_rows > 0) {
     // Comprueba si el usuario es "cinepolito"
     if ($usuario == "cinepolito") {
         // Si es "cinepolito", redirige a "bitacora.html"
-        header("Location: bitacora.html");
+        header("Location: bitacora.php");
     } elseif ($usuario == "admin") {
         // Comprueba si el usuario es "admin"
         // Si es "admin", redirige a "menu.html"
-        header("Location: menu.html");
+        header("Location: menu.php");
     } else {
         // En caso contrario, redirige a "otra_pagina.html" o la página que desees
         header("Location: index.php?error=credenciales");
