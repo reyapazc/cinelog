@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Obtiene los valores del formulario
-    $registro_id = $_POST['registro_id'];
     $numero_sala = $_POST['numero_sala'];
     $hora_funcion = $_POST['hora_funcion'];
     $clientes_sala = $_POST['clientes_sala'];
@@ -30,8 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$numero_sala', '$hora_funcion', '$clientes_sala', '$boletos_vendidos', '$cortesias_generadas', '$responsable_conteo', '$responsable_sala')";
 
     if ($conn->query($sql) === TRUE) {
+        header ("Location: bitacora.php");
         echo "Los datos se guardaron correctamente.";
     } else {
+        header ("Location: bitacora.php");
         echo "Error al guardar los datos: " . $conn->error;
     }
 
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 } else {
     // Si no se envió el formulario, muestra un mensaje de error o redirige a la página del formulario
+    header ("Location: bitacora.php");
     echo "Error: No se recibieron datos del formulario.";
 }
 ?>

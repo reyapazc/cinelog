@@ -1,5 +1,10 @@
+<?php
+include("conexion.php");
+$registros = "SELECT * FROM registros";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -10,152 +15,6 @@
 </head>
 <body style="background-color: #002069">
 <a href="menu.php" class="button">Regresar</a>
-<script>
-    // Función para agregar una nueva fila a la tabla
-    function agregarFila() {
-        // Obtén los valores ingresados en el formulario
-        const numeroSala = document.getElementsByName("numero_sala")[0].value;
-        const horaFuncion = document.getElementsByName("hora_funcion")[0].value;
-        const clientesSala = document.getElementsByName("clientes_sala")[0].value;
-        const boletosVendidos = document.getElementsByName("boletos_vendidos")[0].value;
-        const cortesiasGeneradas = document.getElementsByName("cortesias_generadas")[0].value;
-        const responsableConteo = document.getElementsByName("responsable_conteo")[0].value;
-        const responsableSala = document.getElementsByName("responsable_sala")[0].value;
-
-        // Obtén la tabla
-        const tabla = document.getElementById("bitacoraTable").getElementsByTagName("tbody")[0];
-
-        // Crea una nueva fila y agrega celdas con los valores ingresados
-        const nuevaFila = document.createElement("tr");
-        nuevaFila.innerHTML = `
-            <td>${numeroSala}</td>
-            <td>${horaFuncion}</td>
-            <td>${clientesSala}</td>
-            <td>${boletosVendidos}</td>
-            <td>${cortesiasGeneradas}</td>
-            <td>${responsableConteo}</td>
-            <td>${responsableSala}</td>
-            <td>
-                <button onclick="editarFila(this.parentElement.parentElement)">Editar</button>
-                <button onclick="eliminarFila(this.parentElement.parentElement)">Eliminar</button>
-            </td>
-        `;
-
-        // Agrega la nueva fila a la tabla
-        tabla.appendChild(nuevaFila);
-
-        // Limpia los campos del formulario
-        document.getElementById("bitacoraForm").reset();
-
-        // Enviar los datos al servidor (PHP) para guardar en la base de datos
-        guardarEnBaseDeDatos(numeroSala, horaFuncion, clientesSala, boletosVendidos, cortesiasGeneradas, responsableConteo, responsableSala);
-    }
-
-    // Función para enviar datos al servidor (PHP) para guardar en la base de datos
-    function guardarEnBaseDeDatos(numeroSala, horaFuncion, clientesSala, boletosVendidos, cortesiasGeneradas, responsableConteo, responsableSala) {
-        // Crear un objeto XMLHttpRequest para realizar una solicitud AJAX
-        const xhr = new XMLHttpRequest();
-        const url = "guardar_datos.php"; // Ruta al archivo PHP que manejará el guardado en la base de datos
-        const params = `numero_sala=${numeroSala}&hora_funcion=${horaFuncion}&clientes_sala=${clientesSala}&boletos_vendidos=${boletosVendidos}&cortesias_generadas=${cortesiasGeneradas}&responsable_conteo=${responsableConteo}&responsable_sala=${responsableSala}`;
-
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Aquí puedes manejar la respuesta del servidor si es necesario
-                console.log(xhr.responseText);
-            }
-        };
-
-        // Enviar la solicitud al servidor
-        xhr.send(params);
-    }
-    // Variable global para almacenar el ID de la fila en edición
-    let filaEditadaId = null;
-
-    // Función para habilitar la edición de una fila
-    function editarFila(fila) {
-        const celdas = fila.getElementsByTagName('td');
-
-        // Comprueba si esta fila ya está en modo de edición
-        if (fila.getAttribute('data-editable') === 'true') {
-            // Si está en modo de edición, guardar los cambios
-            guardarFila(fila);
-        } else {
-            // Si no está en modo de edición, habilitar la edición
-            fila.setAttribute('data-editable', 'true');
-
-            // Guarda el ID de la fila en edición
-            filaEditadaId = fila.getAttribute('data-id');
-
-            // Itera a través de las celdas y reemplaza el contenido con campos de entrada
-            for (let i = 0; i < celdas.length - 1; i++) {
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.value = celdas[i].textContent;
-                celdas[i].textContent = '';
-                celdas[i].appendChild(input);
-            }
-
-            // Cambia el tipo del botón de "Editar" a "Actualizar"
-            const botonEditar = celdas[celdas.length - 1].querySelector('button');
-            botonEditar.innerHTML = 'Actualizar';
-        }
-    }
-
-    // Función para guardar los cambios en una fila editada
-    function guardarFila(fila) {
-        const celdas = fila.getElementsByTagName('td');
-
-        // Recopila los valores editados de los campos de entrada
-        const valoresEditados = [];
-        for (let i = 0; i < celdas.length - 1; i++) {
-            const input = celdas[i].querySelector('input');
-            valoresEditados.push(input.value);
-            celdas[i].textContent = input.value;
-        }
-
-        // Cambia el tipo del botón de "Guardar" a "Editar"
-        const botonEditar = celdas[celdas.length - 1].querySelector('button');
-        botonEditar.innerHTML = 'Editar';
-        fila.removeAttribute('data-editable');
-
-        // Actualiza los datos en la base de datos
-        actualizarEnBaseDeDatos(valoresEditados);
-    }
-
-    // Función para enviar datos actualizados al servidor (PHP) para actualizar en la base de datos
-    function actualizarEnBaseDeDatos(valoresEditados) {
-        if (filaEditadaId) {
-            const xhr = new XMLHttpRequest();
-            const url = "actualizar_datos.php"; // Ruta al archivo PHP que manejará la actualización en la base de datos
-            const params = `registro_id=${filaEditadaId}&numero_sala=${valoresEditados[0]}&hora_funcion=${valoresEditados[1]}&clientes_sala=${valoresEditados[2]}&boletos_vendidos=${valoresEditados[3]}&cortesias_generadas=${valoresEditados[4]}&responsable_conteo=${valoresEditados[5]}&responsable_sala=${valoresEditados[6]}`;
-
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Aquí puedes manejar la respuesta del servidor si es necesario
-                    console.log(xhr.responseText);
-                }
-            };
-
-            // Enviar la solicitud al servidor
-            xhr.send(params);
-        }
-    }
-
-    // Función para eliminar una fila
-    function eliminarFila(fila) {
-        const tabla = document.getElementById('bitacoraTable').getElementsByTagName('tbody')[0];
-        tabla.removeChild(fila);
-
-        // Aquí puedes enviar una solicitud al servidor para eliminar la fila de la base de datos si es necesario
-    }
-</script>
-
 <header>
     <img class="header-image" alt="" src="./public/frame1.png" />
 </header>
@@ -201,35 +60,49 @@
                 <input type="text" name="responsable_sala">
             </div>
             <div class="button-container">
-                <!-- Cambia el tipo de botón a "button" y agrega un evento onclick para manejar el formulario -->
-                <button type="button" onclick="agregarFila()">Guardar</button>
+                <button type="submit"">Guardar</button>
             </div>
         </div>
     </form>
-
-    <!-- Parte de abajo con la tabla scrollable -->
-    <div class="scrollable-table">
-        <table id="bitacoraTable">
-            <thead>
+    <table>
+        <thead>
+        <tr>
+            <th>Registro ID:</th>
+            <th>Número de sala:</th>
+            <th>Hora de la función:</th>
+            <th>Número de clientes en sala:</th>
+            <th>Boletos vendidos en sistema:</th>
+            <th>Cortesías generadas en sistema:</th>
+            <th>Responsable de conteo:</th>
+            <th>Responsable de sala:</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $resultado = mysqli_query($conexion, $registros);
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            ?>
             <tr>
-                <th>Número de sala:</th>
-                <th>Hora de la función:</th>
-                <th>Número de clientes en sala:</th>
-                <th>Boletos vendidos en sistema:</th>
-                <th>Cortesías generadas en sistema:</th>
-                <th>Responsable de conteo:</th>
-                <th>Responsable de sala:</th>
-                <th></th> <!-- Nueva columna para los botones -->
+                <td><?php echo $row['registro_id']; ?></td>
+                <td><?php echo $row['numero_sala']; ?></td>
+                <td><?php echo $row['hora_funcion']; ?></td>
+                <td><?php echo $row['clientes_sala']; ?></td>
+                <td><?php echo $row['boletos_vendidos']; ?></td>
+                <td><?php echo $row['cortesias_generadas']; ?></td>
+                <td><?php echo $row['responsable_conteo']; ?></td>
+                <td><?php echo $row['responsable_sala']; ?></td>
+                <td>
+                    <a class="button-editar" href="editar.php?registro_id=<?php echo $row['registro_id']; ?>">Editar</a>
+                    <a class="button-eliminar" href="eliminar.php?registro_id=<?php echo $row['registro_id']; ?>">Eliminar</a>
+                </td>
             </tr>
-            </thead>
-
-            <tbody>
-            <!-- Aquí se generarán dinámicamente las filas de la tabla -->
-            </tbody>
-        </table>
-    </div>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
 </div>
-
 <footer>
     <p>
         Contenido del sitio 2023© Derechos reservados Exhibidora Mexicana Cinépolis®, S.A. de C.V.
