@@ -9,6 +9,7 @@
     <title>Bitácora</title>
 </head>
 <body style="background-color: #002069">
+<a href="menu.php" class="button">Regresar</a>
 <script>
     // Función para agregar una nueva fila a la tabla
     function agregarFila() {
@@ -70,8 +71,8 @@
         // Enviar la solicitud al servidor
         xhr.send(params);
     }
-// Variable global para almacenar el ID de la fila en edición
-let filaEditadaId = null;
+    // Variable global para almacenar el ID de la fila en edición
+    let filaEditadaId = null;
 
     // Función para habilitar la edición de una fila
     function editarFila(fila) {
@@ -85,6 +86,9 @@ let filaEditadaId = null;
             // Si no está en modo de edición, habilitar la edición
             fila.setAttribute('data-editable', 'true');
 
+            // Guarda el ID de la fila en edición
+            filaEditadaId = fila.getAttribute('data-id');
+
             // Itera a través de las celdas y reemplaza el contenido con campos de entrada
             for (let i = 0; i < celdas.length - 1; i++) {
                 const input = document.createElement('input');
@@ -94,9 +98,9 @@ let filaEditadaId = null;
                 celdas[i].appendChild(input);
             }
 
-            // Cambia el tipo del botón de "Editar" a "Guardar"
+            // Cambia el tipo del botón de "Editar" a "Actualizar"
             const botonEditar = celdas[celdas.length - 1].querySelector('button');
-            botonEditar.innerHTML = 'Guardar';
+            botonEditar.innerHTML = 'Actualizar';
         }
     }
 
@@ -117,7 +121,30 @@ let filaEditadaId = null;
         botonEditar.innerHTML = 'Editar';
         fila.removeAttribute('data-editable');
 
-        // Aquí puedes enviar los valores editados al servidor si es necesario
+        // Actualiza los datos en la base de datos
+        actualizarEnBaseDeDatos(valoresEditados);
+    }
+
+    // Función para enviar datos actualizados al servidor (PHP) para actualizar en la base de datos
+    function actualizarEnBaseDeDatos(valoresEditados) {
+        if (filaEditadaId) {
+            const xhr = new XMLHttpRequest();
+            const url = "actualizar_datos.php"; // Ruta al archivo PHP que manejará la actualización en la base de datos
+            const params = `registro_id=${filaEditadaId}&numero_sala=${valoresEditados[0]}&hora_funcion=${valoresEditados[1]}&clientes_sala=${valoresEditados[2]}&boletos_vendidos=${valoresEditados[3]}&cortesias_generadas=${valoresEditados[4]}&responsable_conteo=${valoresEditados[5]}&responsable_sala=${valoresEditados[6]}`;
+
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Aquí puedes manejar la respuesta del servidor si es necesario
+                    console.log(xhr.responseText);
+                }
+            };
+
+            // Enviar la solicitud al servidor
+            xhr.send(params);
+        }
     }
 
     // Función para eliminar una fila

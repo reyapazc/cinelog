@@ -1,3 +1,18 @@
+.button {
+  position: absolute;
+  top: 80px;
+  left: 250px;
+  width: 68px;
+  height: 18px;
+  border-radius: 10%;
+  background-color: #FBCF4C;
+  color: #000000;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* Estilo para el header */
 header {
   text-align: center; /* Centra el contenido horizontalmente */
