@@ -39,7 +39,7 @@
 </header>
 <div class="login-box">
     <form id="generar-bitacora-form" action="generar_bitacora.php" method="POST">
-        <button type="submit" class="button1">Generar Bitácora</button>
+        <a href="#" id="generar-bitacora-link" class="button1">Generar Bitácora</a>
         <a href="bitacora.php" class="button2">Bitácora del Día</a>
         <a href="historial.php" class="button">Historial de Bitácora</a>
     </form>
@@ -95,6 +95,13 @@
             mostrarPopup(mensaje);
         }
     };
+
+// Función para enviar el formulario cuando se hace clic en el enlace
+    document.getElementById("generar-bitacora-link").addEventListener("click", function (e) {
+        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        document.getElementById("generar-bitacora-form").submit(); // Enviar el formulario
+    });
+
 </script>
 </body>
 </html>
