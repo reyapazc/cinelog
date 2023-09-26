@@ -1,4 +1,5 @@
 <?php
+include("verificar_bitacora.php"); // Incluye el archivo de verificación.
 include("conexion.php");
 $registros = "SELECT * FROM registros";
 ?>
