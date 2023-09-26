@@ -87,6 +87,14 @@
             popup.style.display = "none";
         };
     }
+    // Verifica si se proporcionó un mensaje en la URL y muestra el popup
+    window.onload = function() {
+        var parametros = new URLSearchParams(window.location.search);
+        var mensaje = parametros.get('mensaje');
+        if (mensaje) {
+            mostrarPopup(mensaje);
+        }
+    };
 </script>
 </body>
 </html>
