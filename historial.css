@@ -173,7 +173,7 @@ footer {
 }
 /* Estilo para hacer que el contenedor sea scrollable */
 .scrollable-table-container {
-  max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+  max-height: 650px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
   border: 0px solid #ccc; /* Borde de 1 píxel sólido con color gris claro en todos los lados */
   border-left: none; /* Elimina el borde izquierdo */

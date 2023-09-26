@@ -15,7 +15,7 @@ $resultado = mysqli_query($conexion, $consulta);
 
     <title>CineLog</title>
 
-    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./global.css" /> 
     <link rel="stylesheet" href="./historial.css" />
     <link
             rel="stylesheet"
