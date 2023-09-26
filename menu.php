@@ -41,7 +41,7 @@
     <form id="generar-bitacora-form" action="generar_bitacora.php" method="POST">
         <button type="submit" class="button1">Generar Bitácora</button>
         <a href="bitacora.php" class="button2">Bitácora del Día</a>
-        <a href="historial.html" class="button">Historial de Bitácora</a>
+        <a href="historial.php" class="button">Historial de Bitácora</a>
     </form>
 </div>
 <div class="contenido-del-sitio">
