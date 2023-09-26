@@ -14,7 +14,7 @@ body {
 .login-box {
   background: #FFFFFF;
   width: 360px;
-  padding: 45px;
+  padding: 80px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 15px;
@@ -42,7 +42,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   background: #FBCF4C;
-  bottom: 50px;
+  bottom: 118px;
   left: 0;
   right: 0;
   margin: auto;
@@ -82,7 +82,7 @@ header {
   text-decoration: none;
   cursor: pointer;
   background-color: #FBCF4C;
-  bottom: 200px; /* Ajusta la posición vertical del segundo botón */
+  bottom: 268px; /* Ajusta la posición vertical del segundo botón */
   left: 0;
   right: 0;
   margin: auto;
@@ -102,7 +102,7 @@ header {
   text-decoration: none;
   cursor: pointer;
   background: #FBCF4C;
-  bottom: 125px; /* Ajusta la posición vertical del segundo botón */
+  bottom: 193px; /* Ajusta la posición vertical del segundo botón */
   left: 0;
   right: 0;
   margin: auto;
@@ -110,4 +110,20 @@ header {
 
 .button2:hover {
   background-color: #2957d6;
+}
+/* Estilo para el botón de Cerrar Sesión */
+.cerrar-sesion-button {
+  position: absolute;
+  width: 325px;
+  padding: 20px;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #FBCF4C;
+  bottom: 41px; /* Ajusta la posición vertical del segundo botón */
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -42,6 +42,8 @@
         <a href="#" id="generar-bitacora-link" class="button1">Generar Bitácora</a>
         <a href="bitacora.php" class="button2">Bitácora del Día</a>
         <a href="historial.php" class="button">Historial de Bitácora</a>
+        <a href="cerrar_sesion.php" class="button cerrar-sesion-button">Cerrar Sesión</a> <!-- Nuevo botón de Cerrar Sesión -->
+        
     </form>
 </div>
 <div class="contenido-del-sitio">
