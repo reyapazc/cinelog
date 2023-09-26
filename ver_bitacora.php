@@ -43,49 +43,50 @@ $resultado_registros = mysqli_query($conexion, $consulta_registros);
     <title>Bitácora</title>
 </head>
 <body style="background-color: #002069">
-<a href="historial.php" class="button">Volver a la Bitácora</a>
+<a href="historial.php" class="button">Regresar</a>
 <header>
     <img class="header-image" alt="" src="./public/frame1.png" />
 </header>
 <div class="bitacora">
-    <h2>Detalles de la Bitácora</h2>
+    <h2>Detalles de la bitácora</h2>
     <p>Bitácora ID: <?php echo $bitacora['bitacora_id']; ?></p>
-    <p>Nombre de la Bitácora: <?php echo $bitacora['nombre_bitacora']; ?></p>
-    <p>Fecha de Creación: <?php echo $bitacora['fecha_creacion_bitacora']; ?></p>
+    <p>Nombre de la bitácora: <?php echo $bitacora['nombre_bitacora']; ?></p>
+    <p>Fecha de creación: <?php echo $bitacora['fecha_creacion_bitacora']; ?></p>
     <!-- Agrega más detalles de la bitácora según tus necesidades -->
-
-    <table>
-        <thead>
-        <tr>
-            <th>Registro ID</th>
-            <th>Número de sala</th>
-            <th>Hora de la función</th>
-            <th>Número de clientes en sala</th>
-            <th>Boletos vendidos en sistema</th>
-            <th>Cortesías generadas en sistema</th>
-            <th>Responsable de conteo</th>
-            <th>Responsable de sala</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        while ($row = mysqli_fetch_assoc($resultado_registros)) {
-            ?>
+    <div class="scrollable-table-container">
+        <table id="bitacoraTable">
+            <thead>
             <tr>
-                <td><?php echo $row['registro_id']; ?></td>
-                <td><?php echo $row['numero_sala']; ?></td>
-                <td><?php echo $row['hora_funcion']; ?></td>
-                <td><?php echo $row['clientes_sala']; ?></td>
-                <td><?php echo $row['boletos_vendidos']; ?></td>
-                <td><?php echo $row['cortesias_generadas']; ?></td>
-                <td><?php echo $row['responsable_conteo']; ?></td>
-                <td><?php echo $row['responsable_sala']; ?></td>
+                <th>Registro ID</th>
+                <th>Número de sala</th>
+                <th>Hora de la función</th>
+                <th>Número de clientes en sala</th>
+                <th>Boletos vendidos en sistema</th>
+                <th>Cortesías generadas en sistema</th>
+                <th>Responsable de conteo</th>
+                <th>Responsable de sala</th>
             </tr>
+            </thead>
+            <tbody>
             <?php
-        }
-        ?>
-        </tbody>
-    </table>
+            while ($row = mysqli_fetch_assoc($resultado_registros)) {
+                ?>
+                <tr>
+                    <td><?php echo $row['registro_id']; ?></td>
+                    <td><?php echo $row['numero_sala']; ?></td>
+                    <td><?php echo $row['hora_funcion']; ?></td>
+                    <td><?php echo $row['clientes_sala']; ?></td>
+                    <td><?php echo $row['boletos_vendidos']; ?></td>
+                    <td><?php echo $row['cortesias_generadas']; ?></td>
+                    <td><?php echo $row['responsable_conteo']; ?></td>
+                    <td><?php echo $row['responsable_sala']; ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <footer>
     <p>
