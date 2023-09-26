@@ -65,7 +65,8 @@ $registros = "SELECT * FROM registros";
             </div>
         </div>
     </form>
-    <table>
+    <div class="scrollable-table-container">
+    <table id="bitacoraTable">
         <thead>
         <tr>
             <th>Registro ID:</th>

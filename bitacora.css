@@ -130,8 +130,6 @@ footer {
 #bitacoraTable {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 5px;
-    border: 0px solid #000;
     margin-top: 20px;
 }
 
@@ -144,11 +142,15 @@ footer {
 }
 
 #bitacoraTable th {
-    color: #000;
+    color: #fff; /* Color del texto del encabezado */
+    background-color: #002069; /* Color de fondo del encabezado de la tabla */
 }
 
 #bitacoraTable tr:nth-child(even) {
     background-color: #fff;
+}
+#bitacoraTable td:hover {
+    background-color: #ccc; /* Cambia el color de fondo de las celdas cuando se pasa el cursor sobre ellas */
 }
 
 body {
@@ -156,22 +158,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Oculta la barra de desplazamiento del cuerpo */
-}
-/* Estilo para hacer que el contenedor tenga un fondo blanco */
-.container {
-    background-color: white;
-    padding: 20px; /* Espaciado interno para separar el contenido de los bordes */
-}
-
-/* Estilo para hacer que la tabla sea scrollable */
-.scrollable-table {
-    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
-    overflow-y: auto;
-    border: 1px solid #ccc; /* Borde de 1 píxel sólido con color gris claro en todos los lados */
-    border-left: none; /* Elimina el borde izquierdo */
-    border-right: none; /* Elimina el borde derecho */
-    border-top: none; /* Agrega esta línea para ocultar el borde superior */
-    margin-bottom: 10px; /* Agrega un margen en la parte inferior de la tabla */
 }
 
 /* Estilo para el pie de página fijo */
@@ -185,38 +171,31 @@ footer {
     right: 0;
     z-index: 1;
 }
-
-/* Estilo para el contenido principal dentro del contenedor */
-.main-content {
-    margin-bottom: 50px; /* Ajusta la altura para evitar que el contenido principal quede detrás del pie de página fijo */
+/* Estilo para hacer que el contenedor sea scrollable */
+.scrollable-table-container {
+    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+    border: 0px solid #ccc; /* Borde de 1 píxel sólido con color gris claro en todos los lados */
+    border-left: none; /* Elimina el borde izquierdo */
+    border-right: none; /* Elimina el borde derecho */
+    border-top: none; /* Agrega esta línea para ocultar el borde superior */
+    margin-bottom: 10px; /* Agrega un margen en la parte inferior del contenedor */
 }
-
 /* Estilo para la barra de desplazamiento en navegadores WebKit (Chrome y Safari) */
-.scrollable-table::-webkit-scrollbar {
+.scrollable-table-container::-webkit-scrollbar {
     width: 12px; /* Ancho de la barra de desplazamiento */
 }
 
-.scrollable-table::-webkit-scrollbar-thumb {
-    background-color: #FBCF4C; /* Color del pulgar de la barra de desplazamiento */
+.scrollable-table-container::-webkit-scrollbar-thumb {
+    background-color: #FBCF4C; /* Cambia el color del pulgar de la barra de desplazamiento a amarillo */
     border-radius: 6px; /* Radio de borde del pulgar */
 }
 
-.scrollable-table::-webkit-scrollbar-thumb:hover {
-    background-color: #333; /* Color del pulgar cuando se coloca el cursor sobre él */
+.scrollable-table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #333; /* Cambia el color del pulgar cuando se coloca el cursor sobre él */
 }
 
-.scrollable-table::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color de fondo de la pista de la barra de desplazamiento */
+.scrollable-table-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Cambia el color de fondo de la pista de la barra de desplazamiento */
     border-radius: 6px; /* Radio de borde de la pista */
 }
-
-/* Estilo para la barra de desplazamiento en navegadores Firefox */
-.scrollable-table {
-    scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
-    scrollbar-color: #000 #f1f1f1; /* Color del pulgar y la pista de la barra de desplazamiento */
-}
-
-.scrollable-table::-webkit-scrollbar-thumb:hover {
-    background-color: #333; /* Color del pulgar cuando se coloca el cursor sobre él */
-}
-    
